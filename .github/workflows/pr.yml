@@ -7,8 +7,7 @@ jobs:
   repo:
     name: baixar todo codigo do git e cachear
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./management
+
     steps:
       - name: git checkout
         uses: actions/checkout@v3
@@ -18,5 +17,5 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: mvn package
-        working-directory: ${{env.working-directory}}
+      - run: mvn -f management/ clean compile
+
