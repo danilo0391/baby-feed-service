@@ -16,4 +16,5 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: cd management & mvn package
+      - run: mvn package
+        working-directory: cd management
